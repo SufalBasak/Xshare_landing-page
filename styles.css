@@ -67,6 +67,9 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     background-color: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -74,10 +77,18 @@ body {
     color: var(--text-primary);
     font-family: var(--font-body);
     line-height: 1.6;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+}
+
+main, section, header, footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .bg-gradient-orb, .grid-overlay {
@@ -472,22 +483,23 @@ button {
 .mobile-drawer {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 300px;
-    max-width: 85%;
+    max-width: 85vw;
     height: 100vh;
     background: #ffffff;
     z-index: 1000;
     padding: 28px 24px;
     box-shadow: -10px 0 30px rgba(15, 23, 42, 0.1);
-    transition: right var(--transition-base);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .mobile-drawer.open {
-    right: 0;
+    transform: translateX(0);
 }
 
 .drawer-header {
@@ -2389,6 +2401,9 @@ button {
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%) translateY(100px);
+    max-width: calc(100vw - 32px);
+    width: max-content;
+    box-sizing: border-box;
     background: var(--brand-dark);
     border: 1px solid #334155;
     box-shadow: var(--shadow-lg);
@@ -2400,6 +2415,7 @@ button {
     z-index: 3000;
     transition: transform var(--transition-base);
     pointer-events: none;
+    text-align: center;
 }
 
 .toast-notification.show {
