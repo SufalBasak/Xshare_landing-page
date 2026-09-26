@@ -237,6 +237,28 @@ button {
     transform: translateY(-2px);
 }
 
+.btn-cream {
+    background: #FFFDF8;
+    color: #0F172A;
+    border: 1.5px solid #F1E8D9;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(245, 235, 220, 0.4);
+}
+
+.btn-cream:hover {
+    background: #FFF8EB;
+    border-color: #E2D3B8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12), 0 4px 10px rgba(245, 235, 220, 0.6);
+}
+
+.btn-cream .btn-tiny {
+    color: #64748B;
+}
+
+.btn-cream .btn-strong {
+    color: #0F172A;
+}
+
 /* Reference Matching Action Buttons */
 .btn-brand-primary {
     background: var(--brand-blue);
@@ -1825,7 +1847,15 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    border-radius: 10px;
+    border-radius: 12px;
+}
+
+.google-play-badge-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: block;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
 }
 
 .btn-app-store i {
