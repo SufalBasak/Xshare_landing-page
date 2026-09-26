@@ -729,23 +729,57 @@ function initArcadeWheel() {
         }
     });
 
-    const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+    // 3D Geometry Constants
+    const CARD_H = 0.44;
+    const CARD_MAX_W = 0.52;
+    const CARD_RATIO = 1.78;
+    const STEP = 46;
+    const DRUM = 2.22;
+    const LENS = 2.8;
+    const RING_R = 1.18;
+    const BOW = 1.82;
+    const CULL = 1.7;
+    const WHEEL_UNITS = 600;
+    const DRAG_UNITS = 300;
+    const EASE = 0.12;
 
-    let stageW = stageEl.clientWidth || 600;
-    let stageH = stageEl.clientHeight || 320;
+    const rad = deg => (deg * Math.PI) / 180;
+    const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+    const lerp = (a, b, t) => a + (b - a) * t;
+    const bowAt = (drumDeg, bow) => -bow * (1 - Math.cos(rad(drumDeg)));
+
+    function place(ringDeg, drumDeg, ringR, drumR, bow, m) {
+        return `translateX(${m * bowAt(drumDeg, bow)}px) rotateZ(${(1 - m) * ringDeg}deg) translateY(${-(1 - m) * ringR}px) rotateX(${m * drumDeg}deg) translateZ(${m * drumR}px)`;
+    }
+
+    let stageW = stageEl.clientWidth || 800;
+    let stageH = stageEl.clientHeight || 480;
 
     function getMetrics() {
-        const cardW = Math.min(stageW * 0.68, 380);
-        const cardH = cardW / 1.78;
-        return { cardW, cardH };
+        const cardW = Math.min(stageH * CARD_H * CARD_RATIO, stageW * CARD_MAX_W);
+        const cardH = cardW / CARD_RATIO;
+        const drumR = cardH * DRUM;
+        const ringR = cardH * RING_R;
+        const ringScale = count ? clamp((((2 * Math.PI * ringR) / count) * 0.82) / (cardW || 1), 0.16, 1) : 1;
+        return {
+            cardW,
+            cardH,
+            ringR,
+            ringScale,
+            drumR,
+            bow: cardH * BOW,
+            depth: cardH * LENS
+        };
     }
 
     let metrics = getMetrics();
+    stageEl.style.perspective = `${metrics.depth}px`;
 
     window.addEventListener('resize', () => {
-        stageW = stageEl.clientWidth || 600;
-        stageH = stageEl.clientHeight || 320;
+        stageW = stageEl.clientWidth || 800;
+        stageH = stageEl.clientHeight || 480;
         metrics = getMetrics();
+        stageEl.style.perspective = `${metrics.depth}px`;
     });
 
     let currentTurn = 0;
@@ -770,7 +804,6 @@ function initArcadeWheel() {
     }
 
     // Animation Loop
-    const EASE = 0.14;
     let animFrame = null;
     function renderLoop() {
         const gap = targetPos - currentTurn;
@@ -780,39 +813,33 @@ function initArcadeWheel() {
             currentTurn += gap * EASE;
         }
 
-        const pos = currentTurn;
-        const { cardW, cardH } = metrics;
+        const t = currentTurn;
+        const m = clamp(t, 0, 1);
+        const pos = Math.max(0, t - 1);
+
+        const { cardW, cardH, ringR, ringScale, drumR, bow } = metrics;
+        wheelDrum.style.transform = `translateZ(${-m * drumR}px)`;
 
         for (let i = 0; i < count; i++) {
             const d = i - pos;
-            const absD = Math.abs(d);
+            const drumDeg = d * STEP;
             const card = cardElements[i];
             if (card) {
                 card.style.width = `${cardW}px`;
                 card.style.height = `${cardH}px`;
                 card.style.marginLeft = `${-cardW / 2}px`;
                 card.style.marginTop = `${-cardH / 2}px`;
+                card.style.transform = place(d * (360 / count), drumDeg, ringR, drumR, bow, m);
+                card.style.opacity = (m > 0.5 && Math.abs(d) > CULL) ? '0' : '1';
+                card.style.zIndex = String(Math.round(100 - Math.abs(d) * 2));
 
-                if (absD > 1.8) {
-                    card.style.opacity = '0';
-                    card.style.pointerEvents = 'none';
-                    card.style.visibility = 'hidden';
-                } else {
-                    card.style.visibility = 'visible';
-                    const rotX = -d * 24;
-                    const transY = d * (cardH * 0.62);
-                    const transZ = -absD * 70;
-                    const scale = Math.max(0.68, 1 - absD * 0.12);
-                    const opacity = Math.max(0, 1 - absD * 0.45);
-
-                    card.style.transform = `translateY(${transY}px) translateZ(${transZ}px) rotateX(${rotX}deg) scale(${scale})`;
-                    card.style.opacity = String(opacity);
-                    card.style.filter = `brightness(${Math.max(0.75, 1 - absD * 0.22)})`;
-                    card.style.zIndex = String(Math.round(100 - absD * 10));
-                    card.style.pointerEvents = absD < 0.4 ? 'auto' : 'none';
-                }
+                const face = card.firstElementChild;
+                if (face) face.style.transform = `scale(${lerp(ringScale, 1, m)})`;
             }
         }
+
+        if (ringLabel) ringLabel.style.opacity = String(1 - m);
+        if (activeTitle) activeTitle.style.opacity = String(m);
 
         const near = clamp(Math.round(pos), 0, last);
         updateActiveGame(near);
@@ -824,14 +851,14 @@ function initArcadeWheel() {
     // Controls: Wheel scrolling
     let settleTimer = 0;
     stageEl.addEventListener('wheel', (e) => {
-        const next = targetPos + e.deltaY / 400;
-        if (next >= 0 && next <= last) e.preventDefault();
-        targetPos = clamp(next, 0, last);
+        const next = targetPos + e.deltaY / WHEEL_UNITS;
+        if (next > 0 && next < last + 1) e.preventDefault();
+        targetPos = clamp(next, 0, last + 1);
 
         clearTimeout(settleTimer);
         settleTimer = setTimeout(() => {
             targetPos = Math.round(targetPos);
-        }, 120);
+        }, 140);
     }, { passive: false });
 
     // Pointer Drag / Swipe
@@ -843,14 +870,14 @@ function initArcadeWheel() {
 
     stageEl.addEventListener('pointermove', (e) => {
         if (dragStart === null) return;
-        const delta = (dragStart - e.clientY) / 180;
-        targetPos = clamp(targetPos + delta, 0, last);
+        const delta = (dragStart - e.clientY) / DRAG_UNITS;
+        targetPos = clamp(targetPos + delta, 0, last + 1);
         dragStart = e.clientY;
     });
 
     const endPointer = () => {
         dragStart = null;
-        targetPos = clamp(Math.round(targetPos), 0, last);
+        if (targetPos > 0.5) targetPos = Math.round(targetPos);
     };
 
     stageEl.addEventListener('pointerup', endPointer);
@@ -859,10 +886,10 @@ function initArcadeWheel() {
     // Arrow keys
     stageEl.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowDown') {
-            targetPos = clamp(Math.round(targetPos) + 1, 0, last);
+            targetPos = clamp(Math.round(targetPos) + 1, 0, last + 1);
             e.preventDefault();
         } else if (e.key === 'ArrowUp') {
-            targetPos = clamp(Math.round(targetPos) - 1, 0, last);
+            targetPos = clamp(Math.round(targetPos) - 1, 0, last + 1);
             e.preventDefault();
         }
     });
@@ -870,13 +897,13 @@ function initArcadeWheel() {
     // Prev / Next HUD Buttons
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
-            targetPos = clamp(Math.round(targetPos) - 1, 0, last);
+            targetPos = clamp(Math.round(targetPos) - 1, 0, last + 1);
         });
     }
 
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
-            targetPos = clamp(Math.round(targetPos) + 1, 0, last);
+            targetPos = clamp(Math.round(targetPos) + 1, 0, last + 1);
         });
     }
 
