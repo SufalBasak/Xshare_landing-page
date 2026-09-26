@@ -871,19 +871,23 @@ button {
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-bottom: 56px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
 }
 
 .stat-card {
     background: #ffffff;
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    padding: 30px 20px;
+    border-radius: var(--radius-md);
+    padding: 22px 14px;
     text-align: center;
     transition: var(--transition-base);
     box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .stat-card:hover {
@@ -893,28 +897,29 @@ button {
 }
 
 .stat-icon-wrapper {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
-    margin: 0 auto 18px;
+    font-size: 1.05rem;
+    margin: 0 auto 12px;
 }
 
 .icon-exp { background: var(--brand-blue-light); color: var(--brand-blue); }
 .icon-users { background: #ecfdf5; color: #059669; }
 .icon-companies { background: #fffbeb; color: #d97706; }
 .icon-learning { background: #fdf2f8; color: #db2777; }
+.icon-ideas { background: #f5f3ff; color: #7c3aed; }
 
 .stat-number-wrap {
     font-family: var(--font-heading);
-    font-size: 2.6rem;
+    font-size: 1.85rem;
     font-weight: 800;
     color: var(--brand-dark);
-    line-height: 1;
-    margin-bottom: 8px;
+    line-height: 1.1;
+    margin-bottom: 6px;
 }
 
 .stat-plus {
@@ -922,14 +927,15 @@ button {
 }
 
 .stat-label {
-    font-size: 1.05rem;
+    font-size: 0.925rem;
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     color: var(--brand-dark);
 }
 
 .stat-sub {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
     color: var(--text-muted);
 }
 
@@ -2457,8 +2463,8 @@ button {
     }
 
     .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
     }
 
     .features-grid {
