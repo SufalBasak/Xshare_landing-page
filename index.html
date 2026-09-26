@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XShare - Learn From Verified Interview Experiences | Career Platform</title>
+    <meta name="description" content="Join XShare - the all-in-one platform centered on real interview experiences, offering jobs, hackathons, tests, scholarships, and community-driven preparation tools.">
+    <meta name="keywords" content="interview experiences, tech jobs, coding hackathons, mock tests, ATS resume builder, placement preparation, college fests, tech community">
+    <meta property="og:title" content="XShare - Where Experiences Turn Into Opportunities">
+    <meta property="og:description" content="Unlock exclusive insights from top tech professionals at Microsoft, Google, Adobe, Zomato and more.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon / Title bar Icon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Dynamic Glow & Canvas -->
+    <div class="bg-gradient-orb orb-1"></div>
+    <div class="bg-gradient-orb orb-2"></div>
+    <div class="bg-gradient-orb orb-3"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" id="brand-logo">
+                <img src="logo.png" alt="XShare Logo" class="brand-logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">Xshare</span>
+                    <span class="logo-tag">CAREER PLATFORM</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#experiences" class="nav-link">Experiences</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#jobs" class="nav-link">Jobs & Internships</a></li>
+                    <li class="nav-item"><a href="#tools" class="nav-link">Resume & Mocks</a></li>
+                    <li class="nav-item"><a href="#stories" class="nav-link">Success Stories</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-btn-app" id="btn-get-app-nav">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Get the App</span>
+                </a>
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <div class="brand-logo">
+                <img src="logo.png" alt="XShare Logo" class="brand-logo-img">
+                <span class="logo-name">Xshare</span>
+            </div>
+            <button class="drawer-close-btn" id="drawer-close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul class="drawer-nav-list">
+            <li><a href="#experiences" class="drawer-nav-link"><i class="fa-solid fa-book-open"></i> Interview Experiences</a></li>
+            <li><a href="#features" class="drawer-nav-link"><i class="fa-solid fa-shapes"></i> Platform Features</a></li>
+            <li><a href="#jobs" class="drawer-nav-link"><i class="fa-solid fa-briefcase"></i> Job Portal</a></li>
+            <li><a href="#tools" class="drawer-nav-link"><i class="fa-solid fa-file-shield"></i> ATS Resume Builder</a></li>
+            <li><a href="#mock-prep" class="drawer-nav-link"><i class="fa-solid fa-laptop-code"></i> Mock Tests</a></li>
+            <li><a href="#stories" class="drawer-nav-link"><i class="fa-solid fa-trophy"></i> Success Stories</a></li>
+            <li><a href="#faq" class="drawer-nav-link"><i class="fa-solid fa-circle-question"></i> Help & FAQs</a></li>
+        </ul>
+        <div class="drawer-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" id="btn-get-app-drawer">
+                <i class="fa-solid fa-download"></i> Download XShare App
+            </a>
+        </div>
+    </div>
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <div class="hero-center-container">
+                <div class="hero-center-content">
+                    <div class="badge-pill hero-badge" data-reveal>
+                        <span class="blue-dot"></span>
+                        <span class="badge-text">Read Experiences Boost Career</span>
+                    </div>
+
+                    <h1 class="hero-title" data-reveal>
+                        <span class="dark-text">Learn From </span><span class="brand-blue-text">Verified<br>Experiences</span>
+                    </h1>
+
+                    <p class="hero-subtitle" data-reveal>
+                        Join the all-in-one platform centered on real interview experiences, offering jobs, hackathons, tests, scholarships, and community-driven preparation tools.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-cta-group" data-reveal>
+                        <a href="#experiences" class="btn btn-brand-primary" id="btn-explore-hero">
+                            <i class="fa-solid fa-users-viewfinder"></i>
+                            <span>Explore Experiences</span>
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-brand-outline" id="btn-build-profile">
+                            <span>Build Your Profile</span>
+                        </a>
+                    </div>
+
+                    <!-- Reach Us Line -->
+                    <p class="hero-contact-line" data-reveal>
+                        Questions? Reach us at <a href="mailto:connect@xshare.in" class="brand-link">connect@xshare.in</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HERO APP VIDEO PREVIEW SHOWCASE -->
+        <section class="video-showcase-section" id="preview-video">
+            <div class="container">
+                <div class="video-mockup-frame" data-reveal>
+                    <div class="mockup-header-bar">
+                        <div class="mockup-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <div class="mockup-address-bar">
+                            <i class="fa-solid fa-lock"></i>
+                            <span>xshare.in/app/explore</span>
+                        </div>
+                        <div class="mockup-badge-wrap">
+                            <button class="video-sound-toggle-btn active-sound" id="video-sound-toggle" aria-label="Toggle Sound" title="Click to toggle sound">
+                                <i class="fa-solid fa-volume-high" id="sound-icon"></i>
+                                <span id="sound-text">Sound ON</span>
+                            </button>
+                            <span class="badge-live-demo"><i class="fa-solid fa-circle"></i> Live Platform</span>
+                        </div>
+                    </div>
+                    <div class="video-wrapper" id="video-container" title="Click video to toggle audio">
+                        <video autoplay loop playsinline disablepictureinpicture class="showcase-video" id="showcase-video">
+                            <source src="vedio/WhatsApp Video 2026-09-26 at 9.04.25 AM.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="video-unmute-overlay-btn" id="video-unmute-overlay">
+                            <div class="sound-wave-anim">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                            <i class="fa-solid fa-volume-high"></i>
+                            <span>Tap for Sound</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS / SCALE YOUR CAREER SECTION -->
+        <section class="stats-section" id="stats">
+            <div class="container">
+                <div class="stats-header" data-reveal>
+                    <span class="section-tag">SCALE YOUR CAREER</span>
+                    <h2 class="stats-title">Unlock exclusive insights from top tech professionals.</h2>
+                    <p class="stats-desc">Join tens of thousands of software engineers, product managers, and data scientists leveling up daily.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card" data-reveal>
+                        <div class="stat-icon-wrapper icon-exp">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div class="stat-number-wrap">
+                            <span class="stat-number" data-target="10000">10,000</span><span class="stat-plus">+</span>
+                        </div>
+                        <h3 class="stat-label">Verified Experiences</h3>
+                        <p class="stat-sub">From FAANG, tier-1 startups, & unicorn firms</p>
+                    </div>
+
+                    <div class="stat-card" data-reveal>
+                        <div class="stat-icon-wrapper icon-users">
+                            <i class="fa-solid fa-users-rays"></i>
+                        </div>
+                        <div class="stat-number-wrap">
+                            <span class="stat-number" data-target="550">550</span><span class="stat-plus">+</span>
+                        </div>
+                        <h3 class="stat-label">Active Users</h3>
+                        <p class="stat-sub">Daily learners, mentors, and placement aspirants</p>
+                    </div>
+
+                    <div class="stat-card" data-reveal>
+                        <div class="stat-icon-wrapper icon-companies">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <div class="stat-number-wrap">
+                            <span class="stat-number" data-target="1000">1,000</span><span class="stat-plus">+</span>
+                        </div>
+                        <h3 class="stat-label">Companies Covered</h3>
+                        <p class="stat-sub">Global giants, high-growth Indian unicorns & MNCs</p>
+                    </div>
+
+                    <div class="stat-card" data-reveal>
+                        <div class="stat-icon-wrapper icon-learning">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-number-wrap">
+                            <span class="stat-number" data-target="1000">1,000</span><span class="stat-plus">+</span>
+                        </div>
+                        <h3 class="stat-label">Learning & Mock Tests</h3>
+                        <p class="stat-sub">Curated problem sets, DSA tracks & test series</p>
+                    </div>
+                </div>
+
+                <!-- Trusted Brands Ticker -->
+                <div class="company-ticker-wrapper" data-reveal>
+                    <span class="ticker-label">Insights from candidates who cracked roles at:</span>
+                    <div class="ticker-track">
+                        <div class="ticker-item"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+                        <div class="ticker-item"><i class="fa-brands fa-google"></i> Google</div>
+                        <div class="ticker-item"><i class="fa-brands fa-amazon"></i> Amazon</div>
+                        <div class="ticker-item"><i class="fa-brands fa-meta"></i> Meta</div>
+                        <div class="ticker-item"><i class="fa-brands fa-apple"></i> Apple</div>
+                        <div class="ticker-item"><i class="fa-brands fa-uber"></i> Uber</div>
+                        <div class="ticker-item"><i class="fa-solid fa-burger"></i> Zomato</div>
+                        <div class="ticker-item"><i class="fa-solid fa-cube"></i> Adobe</div>
+                        <div class="ticker-item"><i class="fa-brands fa-spotify"></i> Spotify</div>
+                        <div class="ticker-item"><i class="fa-solid fa-bolt"></i> Swiggy</div>
+                        <!-- duplicate for seamless loop -->
+                        <div class="ticker-item"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+                        <div class="ticker-item"><i class="fa-brands fa-google"></i> Google</div>
+                        <div class="ticker-item"><i class="fa-brands fa-amazon"></i> Amazon</div>
+                        <div class="ticker-item"><i class="fa-brands fa-meta"></i> Meta</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY XSHARE? / FEATURES GRID (THE 9 PILLARS) -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <div class="section-header-center" data-reveal>
+                    <span class="section-tag"><i class="fa-solid fa-compass-drafting"></i> WHY XSHARE?</span>
+                    <h2 class="section-title">Where Experiences Turn Into Opportunities</h2>
+                    <p class="section-desc">
+                        XShare is where structured experiences power real opportunities—helping you learn faster, apply smarter, and grow stronger. Our platform bridges the gap between preparation and placement.
+                    </p>
+                </div>
+
+                <!-- Category Filters for Features -->
+                <div class="feature-filter-tabs" data-reveal>
+                    <button class="filter-tab active" data-filter="all">All Features (9)</button>
+                    <button class="filter-tab" data-filter="prep">Preparation & Practice</button>
+                    <button class="filter-tab" data-filter="careers">Jobs & Resume</button>
+                    <button class="filter-tab" data-filter="community">Community & Events</button>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Feature 1: Experience Sharing -->
+                    <div class="feature-card" data-category="prep" data-reveal>
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-icon-box icon-purple">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <div class="feature-badge">Core Engine</div>
+                        <h3 class="feature-title">Experience Sharing</h3>
+                        <p class="feature-text">
+                            Learn from real interview experiences and placement stories from the community. Get round-by-round question breakdowns, compensation benchmarks, and actionable tips from those who've been there.
+                        </p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-check"></i> Verified interview rounds & questions</li>
+                            <li><i class="fa-solid fa-check"></i> Difficulty & question tags</li>
+                            <li><i class="fa-solid fa-check"></i> Real offer CTC & compensation ranges</li>
+                        </ul>
+                        <div class="feature-card-footer">
+                            <a href="#experiences" class="feature-link">Explore Stories <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Community -->
+                    <div class="feature-card" data-category="community" data-reveal>
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-icon-box icon-cyan">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="feature-badge">Interactive</div>
+                        <h3 class="feature-title">Community</h3>
+                        <p class="feature-text">
+                            Ask questions and get answers from verified experts and seniors in the community. Collaborate on peer mock interviews, resolve technical doubts, and grow together with like-minded peers.
+                        </p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-check"></i> Direct Senior & Alumni AMA</li>
+                            <li><i class="fa-solid fa-check"></i> College & batch-specific channels</li>
+                            <li><i class="fa-solid fa-check"></i> 100% spam-free, moderated answers</li>
+                        </ul>
+                        <div class="feature-card-footer">
+                            <a href="#community-preview" class="feature-link">Join Community <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Job Portal -->
+                    <div class="feature-card" data-category="careers" data-reveal id="jobs">
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-icon-box icon-green">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="feature-badge">High Signal</div>
+                        <h3 class="feature-title">Job Portal</h3>
+                        <p class="feature-text">
+                            Find the latest job openings, off-campus drives, and internship opportunities tailored for you. Skip the ghost jobs, cut through the noise, and request direct employee referrals.
+                        </p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-check"></i> Fresh graduate & intern hiring tracks</li>
+                            <li><i class="fa-solid fa-check"></i> Verified 1-click referral requests</li>
+                            <li><i class="fa-solid fa-check"></i> Live hiring deadline alerts</li>
+                        </ul>
+                        <div class="feature-card-footer">
+                            <a href="#jobs-list" class="feature-link">Browse Jobs <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Resume Builder -->
+                    <div class="feature-card" data-category="careers" data-reveal id="tools">
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-icon-box icon-amber">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <div class="feature-badge">ATS 95%+ Score</div>
+                        <h3 class="feature-title">Resume Builder</h3>
+                        <p class="feature-text">
+                            Build an ATS-optimized professional resume in minutes using modern templates designed by recruitment experts. Real-time feedback checks your bullet points against top tech criteria.
+                        </p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-check"></i> Single-click LaTeX & PDF Export</li>
+                            <li><i class="fa-solid fa-check"></i> Automated action-verb optimizer</li>
+                            <li><i class="fa-solid fa-check"></i> FAANG recruiter approved layouts</li>
+                        </ul>
+                        <div class="feature-card-footer">
+                            <button class="feature-link btn-link-action" id="btn-demo-resume">Try Resume Tool <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5: Shorts -->
+                    <div class="feature-card" data-category="prep" data-reveal>
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-icon-box icon-pink">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <div class="feature-badge">Quick Learning</div>
+                        <h3 class="feature-title">Shorts</h3>
+                        <p class="feature-text">
+                            Deep-dive into industry trends, rapid DSA concepts, system design trade-offs, and expert interview strategies through bite-sized, highly actionable 60-second content.
+                        </p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-check"></i> Quick coding tips & trick videos</li>
+                            <li><i class="fa-solid fa-check"></i> HR & behavioral question frameworks</li>
+                            <li><i class="fa-solid fa-check"></i> Daily tech market news in 1 minute</li>
+                        </ul>
+                        <div class="feature-card-footer">
+                            <a href="https://xshare.in/shorts.html" target="_blank" class="feature-link">Watch Shorts <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6: Mock Preparation -->
+                    <div class="feature-card" data-category="prep" data-reveal id="mock-prep">
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-icon-box icon-blue">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div class="feature-badge">Gamified</div>
+                        <h3 class="feature-title">Mock Preparation</h3>
+                        <p class="feature-text">
+                            Sharpen your skills with curated mock tests simulating actual online assessments. Track your progress with XP points, speed metrics, and deep topic-wise performance analytics.
+                        </p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-check"></i> Company-specific test series (TCS, Infosys, Amazon)</li>
+                            <li><i class="fa-solid fa-check"></i> Live coding editor & testcase evaluation</li>
+                            <li><i class="fa-solid fa-check"></i> Granular weak-area diagnostic reports</li>
+                        </ul>
+                        <div class="feature-card-footer">
+                            <button class="feature-link btn-link-action" id="btn-demo-mock">Start Quick Mock <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Feature 7: Hackathons -->
+                    <div class="feature-card" data-category="community" data-reveal>
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-icon-box icon-teal">
+                            <i class="fa-solid fa-code-fork"></i>
+                        </div>
+                        <div class="feature-badge">Prizes & Bounties</div>
+                        <h3 class="feature-title">Hackathons</h3>
+                        <p class="feature-text">
+                            Find and participate in upcoming national & global coding competitions and hackathons to showcase your skills, win cash prizes, and get fast-tracked to top tech recruiters.
+                        </p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-check"></i> Integrated teammate matchmaking</li>
+                            <li><i class="fa-solid fa-check"></i> Direct recruiter viewing of submissions</li>
+                            <li><i class="fa-solid fa-check"></i> Live countdowns & submission portals</li>
+                        </ul>
+                        <div class="feature-card-footer">
+                            <a href="#experiences" class="feature-link">Explore Hackathons <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Feature 8: College Fests -->
+                    <div class="feature-card" data-category="community" data-reveal>
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-icon-box icon-orange">
+                            <i class="fa-solid fa-masks-theater"></i>
+                        </div>
+                        <div class="feature-badge">Campus Life</div>
+                        <h3 class="feature-title">College Fests</h3>
+                        <p class="feature-text">
+                            Discover the most happening cultural, technical, and entrepreneurship fests around you. Network beyond the screen at physical events and inter-college symposiums.
+                        </p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-check"></i> Pan-India tech & cultural fest directory</li>
+                            <li><i class="fa-solid fa-check"></i> Pass bookings & event schedules</li>
+                            <li><i class="fa-solid fa-check"></i> Campus ambassador opportunities</li>
+                        </ul>
+                        <div class="feature-card-footer">
+                            <a href="#experiences" class="feature-link">Find Fests <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Feature 9: Leaderboard -->
+                    <div class="feature-card" data-category="community" data-reveal>
+                        <div class="feature-card-glow"></div>
+                        <div class="feature-icon-box icon-gold">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div class="feature-badge">Recruiter Spotlight</div>
+                        <h3 class="feature-title">Leaderboard</h3>
+                        <p class="feature-text">
+                            Get recognized for your contributions, interview shares, mock test performances, and helpful answers. Climb the ranks to stand out directly to hiring managers and potential employers.
+                        </p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-check"></i> Weekly & Monthly talent leaderboards</li>
+                            <li><i class="fa-solid fa-check"></i> Verified contributor badges & perks</li>
+                            <li><i class="fa-solid fa-check"></i> Direct recruiter interview invites for Top 50</li>
+                        </ul>
+                        <div class="feature-card-footer">
+                            <a href="#experiences" class="feature-link">View Rankings <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPLORE VERIFIED EXPERIENCES ARCHIVE SECTION -->
+        <section class="experiences-section" id="experiences">
+            <div class="container">
+                <div class="section-header-center" data-reveal>
+                    <span class="section-tag"><i class="fa-solid fa-bolt"></i> REAL INTERVIEW ARCHIVES</span>
+                    <h2 class="section-title">Learn From Verified Experiences</h2>
+                    <p class="section-desc">Browse authentic round-by-round interview debriefs from candidates who recently cracked top companies.</p>
+                </div>
+
+                <!-- Experiences Grid of Cards -->
+                <div class="experiences-cards-grid" id="experiences-grid">
+                    <!-- Card 1: Microsoft -->
+                    <div class="exp-card" data-company="microsoft" data-role="sde" data-reveal>
+                        <div class="exp-card-header">
+                            <div class="exp-brand-meta">
+                                <div class="exp-brand-icon ms-logo"><i class="fa-brands fa-microsoft"></i></div>
+                                <div>
+                                    <h4 class="exp-company-title">Microsoft</h4>
+                                    <span class="exp-role-title">Software Development Engineer (SDE-1)</span>
+                                </div>
+                            </div>
+                            <span class="badge-verif"><i class="fa-solid fa-shield-check"></i> Verified</span>
+                        </div>
+                        <div class="exp-tags-row">
+                            <span class="pill-mini tag-rounds">4 Rounds</span>
+                            <span class="pill-mini tag-ctc">44 LPA CTC</span>
+                            <span class="pill-mini tag-diff-med">Medium</span>
+                            <span class="pill-mini tag-campus">On-Campus 2026</span>
+                        </div>
+                        <p class="exp-excerpt">
+                            "R1 was online coding (Dynamic Programming & String Tries). R2 was a heavy focus on Tree serialization and Concurrency locks. System design round discussed designing a distributed URL shortener with rate limiting..."
+                        </p>
+                        <div class="exp-card-footer">
+                            <div class="exp-author-compact">
+                                <span class="author-circle ms-grad">AM</span>
+                                <span>Ankesh Mishra • Microsoft</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary btn-read-exp" data-id="ms-1">
+                                Read Full <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Adobe -->
+                    <div class="exp-card" data-company="adobe" data-role="ds" data-reveal>
+                        <div class="exp-card-header">
+                            <div class="exp-brand-meta">
+                                <div class="exp-brand-icon adobe-logo"><i class="fa-solid fa-cube"></i></div>
+                                <div>
+                                    <h4 class="exp-company-title">Adobe</h4>
+                                    <span class="exp-role-title">Data Scientist / ML Engineer</span>
+                                </div>
+                            </div>
+                            <span class="badge-verif"><i class="fa-solid fa-shield-check"></i> Verified</span>
+                        </div>
+                        <div class="exp-tags-row">
+                            <span class="pill-mini tag-rounds">3 Rounds</span>
+                            <span class="pill-mini tag-ctc">38 LPA CTC</span>
+                            <span class="pill-mini tag-diff-hard">Hard</span>
+                            <span class="pill-mini tag-campus">Off-Campus Drive</span>
+                        </div>
+                        <p class="exp-excerpt">
+                            "Focused on transformer model fine-tuning, vector embeddings, loss function derivations, and SQL optimization for petabyte-scale data pipelines. Mock test preparation on XShare really set me apart..."
+                        </p>
+                        <div class="exp-card-footer">
+                            <div class="exp-author-compact">
+                                <span class="author-circle adobe-grad">PS</span>
+                                <span>Priya Singh • Adobe</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary btn-read-exp" data-id="adobe-1">
+                                Read Full <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Zomato -->
+                    <div class="exp-card" data-company="zomato" data-role="pm" data-reveal>
+                        <div class="exp-card-header">
+                            <div class="exp-brand-meta">
+                                <div class="exp-brand-icon zomato-logo"><i class="fa-solid fa-burger"></i></div>
+                                <div>
+                                    <h4 class="exp-company-title">Zomato</h4>
+                                    <span class="exp-role-title">Associate Product Manager (APM)</span>
+                                </div>
+                            </div>
+                            <span class="badge-verif"><i class="fa-solid fa-shield-check"></i> Verified</span>
+                        </div>
+                        <div class="exp-tags-row">
+                            <span class="pill-mini tag-rounds">4 Rounds</span>
+                            <span class="pill-mini tag-ctc">30 LPA CTC</span>
+                            <span class="pill-mini tag-diff-med">Medium</span>
+                            <span class="pill-mini tag-campus">Direct Referral</span>
+                        </div>
+                        <p class="exp-excerpt">
+                            "Product sense assignment on improving delivery rider retention. Live interview evaluated trade-offs between surge pricing models and customer NPS. The community insights on XShare were crucial for the culture fit round..."
+                        </p>
+                        <div class="exp-card-footer">
+                            <div class="exp-author-compact">
+                                <span class="author-circle zomato-grad">RK</span>
+                                <span>Rohan Kapoor • Zomato</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary btn-read-exp" data-id="zomato-1">
+                                Read Full <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Google -->
+                    <div class="exp-card" data-company="google" data-role="sde" data-reveal>
+                        <div class="exp-card-header">
+                            <div class="exp-brand-meta">
+                                <div class="exp-brand-icon google-logo"><i class="fa-brands fa-google"></i></div>
+                                <div>
+                                    <h4 class="exp-company-title">Google</h4>
+                                    <span class="exp-role-title">Software Engineer (L3 / L4)</span>
+                                </div>
+                            </div>
+                            <span class="badge-verif"><i class="fa-solid fa-shield-check"></i> Verified</span>
+                        </div>
+                        <div class="exp-tags-row">
+                            <span class="pill-mini tag-rounds">5 Rounds</span>
+                            <span class="pill-mini tag-ctc">52 LPA CTC</span>
+                            <span class="pill-mini tag-diff-hard">Hard</span>
+                            <span class="pill-mini tag-campus">Referral Drive</span>
+                        </div>
+                        <p class="exp-excerpt">
+                            "Graph traversal with Dijkstra modifications, LRU Cache with TTL under strict thread safety, and System Design for real-time collaborative code editor. Keep your communication crystal clear throughout!"
+                        </p>
+                        <div class="exp-card-footer">
+                            <div class="exp-author-compact">
+                                <span class="author-circle google-grad">SD</span>
+                                <span>Sneha Das • Google</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary btn-read-exp" data-id="google-1">
+                                Read Full <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Amazon -->
+                    <div class="exp-card" data-company="amazon" data-role="intern" data-reveal>
+                        <div class="exp-card-header">
+                            <div class="exp-brand-meta">
+                                <div class="exp-brand-icon amazon-logo"><i class="fa-brands fa-amazon"></i></div>
+                                <div>
+                                    <h4 class="exp-company-title">Amazon</h4>
+                                    <span class="exp-role-title">Summer SDE Intern 2026</span>
+                                </div>
+                            </div>
+                            <span class="badge-verif"><i class="fa-solid fa-shield-check"></i> Verified</span>
+                        </div>
+                        <div class="exp-tags-row">
+                            <span class="pill-mini tag-rounds">2 Rounds</span>
+                            <span class="pill-mini tag-ctc">₹1.1L / Month</span>
+                            <span class="pill-mini tag-diff-med">Medium</span>
+                            <span class="pill-mini tag-campus">Hackathon Winner</span>
+                        </div>
+                        <p class="exp-excerpt">
+                            "Online assessment had 2 questions on sliding window and topological sorting. Interview had 1 coding question and 30 minutes on Amazon Leadership Principles with STAR method examples..."
+                        </p>
+                        <div class="exp-card-footer">
+                            <div class="exp-author-compact">
+                                <span class="author-circle amazon-grad">VK</span>
+                                <span>Vikram Kumar • Amazon</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary btn-read-exp" data-id="amazon-1">
+                                Read Full <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Uber -->
+                    <div class="exp-card" data-company="uber" data-role="sde" data-reveal>
+                        <div class="exp-card-header">
+                            <div class="exp-brand-meta">
+                                <div class="exp-brand-icon uber-logo"><i class="fa-brands fa-uber"></i></div>
+                                <div>
+                                    <h4 class="exp-company-title">Uber</h4>
+                                    <span class="exp-role-title">Software Engineer II</span>
+                                </div>
+                            </div>
+                            <span class="badge-verif"><i class="fa-solid fa-shield-check"></i> Verified</span>
+                        </div>
+                        <div class="exp-tags-row">
+                            <span class="pill-mini tag-rounds">4 Rounds</span>
+                            <span class="pill-mini tag-ctc">58 LPA CTC</span>
+                            <span class="pill-mini tag-diff-hard">Hard</span>
+                            <span class="pill-mini tag-campus">Experienced Hire</span>
+                        </div>
+                        <p class="exp-excerpt">
+                            "Deep dive on Geohashing algorithms (H3 index), distributed message brokers (Kafka partitions) and low-latency geospatial indexing. Highlighted practical concurrency tradeoffs."
+                        </p>
+                        <div class="exp-card-footer">
+                            <div class="exp-author-compact">
+                                <span class="author-circle uber-grad">TG</span>
+                                <span>Tanmay Gupta • Uber</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary btn-read-exp" data-id="uber-1">
+                                Read Full <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-cta-banner" data-reveal>
+                    <div class="banner-text">
+                        <h3>Have you recently appeared for an interview?</h3>
+                        <p>Share your experience anonymously or with your profile, earn exclusive verified badges & unlock premium mock tracks!</p>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-share-experience">
+                        <i class="fa-solid fa-pen-to-square"></i> Share Your Experience
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE LIVE DEMO TOOLS: ATS RESUME CHECKER & MOCK TEST SIMULATOR -->
+        <section class="tools-interactive-section" id="interactive-tools">
+            <div class="container">
+                <div class="section-header-center" data-reveal>
+                    <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> POWERFUL PREP SUITE</span>
+                    <h2 class="section-title">Experience XShare Tools In Action</h2>
+                    <p class="section-desc">Test our real-time ATS scoring engine and take a 30-second live mock challenge right now.</p>
+                </div>
+
+                <div class="interactive-dual-grid">
+                    <!-- Tool 1: Interactive ATS Resume Scorer Demo -->
+                    <div class="tool-demo-box" data-reveal>
+                        <div class="tool-header">
+                            <div class="tool-title-wrap">
+                                <i class="fa-solid fa-file-shield tool-icon"></i>
+                                <div>
+                                    <h3>ATS Resume Health Score</h3>
+                                    <span class="tool-sub">Real-time keyword & formatting audit</span>
+                                </div>
+                            </div>
+                            <div class="ats-score-gauge" id="ats-gauge">
+                                <span class="gauge-value" id="ats-score-num">96%</span>
+                                <span class="gauge-label">ATS Match</span>
+                            </div>
+                        </div>
+
+                        <div class="tool-body">
+                            <div class="role-selector-pill-group">
+                                <button class="role-pill active" data-role-sample="sde">Full Stack SDE</button>
+                                <button class="role-pill" data-role-sample="ml">Machine Learning</button>
+                                <button class="role-pill" data-role-sample="pm">Product Manager</button>
+                            </div>
+
+                            <div class="sample-resume-preview" id="sample-resume-box">
+                                <div class="resume-line"><strong>Target Role:</strong> Senior Software Engineer @ Tier-1 Tech</div>
+                                <div class="resume-bullet passed"><i class="fa-solid fa-check"></i> Quantified impact with metrics (e.g., "Reduced latency by 42%")</div>
+                                <div class="resume-bullet passed"><i class="fa-solid fa-check"></i> Core tech stack highlighted (Go, React, Distributed Systems, Redis)</div>
+                                <div class="resume-bullet passed"><i class="fa-solid fa-check"></i> Standard single-column recruiter-friendly layout</div>
+                                <div class="resume-bullet warning" id="resume-tip-line"><i class="fa-solid fa-circle-info"></i> Recommendation: Add 2 more system architecture keywords</div>
+                            </div>
+
+                            <div class="tool-actions-row">
+                                <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-block" id="btn-open-resume-builder">
+                                    <i class="fa-solid fa-magic"></i> Build My Free ATS Resume Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tool 2: Live Quick Mock Test Interactive Widget -->
+                    <div class="tool-demo-box" data-reveal>
+                        <div class="tool-header">
+                            <div class="tool-title-wrap">
+                                <i class="fa-solid fa-terminal tool-icon icon-code"></i>
+                                <div>
+                                    <h3>Quick Mock Test Challenge</h3>
+                                    <span class="tool-sub">Real interview assessment question</span>
+                                </div>
+                            </div>
+                            <span class="timer-pill" id="mock-timer"><i class="fa-regular fa-clock"></i> 00:45</span>
+                        </div>
+
+                        <div class="tool-body mock-quiz-body">
+                            <div class="quiz-question-box">
+                                <span class="quiz-category">Data Structures • Medium</span>
+                                <p class="quiz-q-text" id="quiz-question">
+                                    What is the worst-case time complexity of finding an element in a balanced Red-Black Tree?
+                                </p>
+                            </div>
+
+                            <div class="quiz-options-list" id="quiz-options">
+                                <button class="quiz-option-btn" data-correct="false" data-opt="A">
+                                    <span class="opt-badge">A</span> O(1)
+                                </button>
+                                <button class="quiz-option-btn" data-correct="true" data-opt="B">
+                                    <span class="opt-badge">B</span> O(log N)
+                                </button>
+                                <button class="quiz-option-btn" data-correct="false" data-opt="C">
+                                    <span class="opt-badge">C</span> O(N)
+                                </button>
+                                <button class="quiz-option-btn" data-correct="false" data-opt="D">
+                                    <span class="opt-badge">D</span> O(N log N)
+                                </button>
+                            </div>
+
+                            <div class="quiz-feedback-msg" id="quiz-feedback" style="display:none;"></div>
+
+                            <div class="tool-actions-row">
+                                <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-block" id="btn-more-mocks">
+                                    <i class="fa-solid fa-list-check"></i> Unlock 5,000+ Full Mock Series
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUCCESS STORIES & TESTIMONIALS SECTION -->
+        <section class="stories-section" id="stories">
+            <div class="container">
+                <div class="section-header-center" data-reveal>
+                    <span class="section-tag"><i class="fa-solid fa-trophy"></i> SUCCESS STORIES</span>
+                    <h2 class="section-title">From the XShare Community</h2>
+                    <p class="section-desc">See how students and working professionals turned verified experiences into dream career placements.</p>
+                </div>
+
+                <div class="stories-grid">
+                    <!-- Testimonial 1: Ankesh Mishra -->
+                    <div class="story-card" data-reveal>
+                        <div class="story-quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                        <div class="story-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="story-quote">
+                            "XShare's verified experiences helped me understand the exact interview patterns and expectations at top tech companies. It's hands-down the most transparent and high-signal platform for career prep."
+                        </p>
+                        <div class="story-profile">
+                            <div class="story-avatar ms-avatar">AM</div>
+                            <div class="story-details">
+                                <h4 class="story-name">Ankesh Mishra</h4>
+                                <span class="story-role"><i class="fa-brands fa-microsoft"></i> SDE @ Microsoft</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2: Priya Singh -->
+                    <div class="story-card active-featured" data-reveal>
+                        <div class="story-quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                        <div class="story-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="story-quote">
+                            "The mock tests were a game changer for my preparation. They are well-curated and very similar to actual exams. I loved the competitive leaderboard aspect—it kept me accountable every single day!"
+                        </p>
+                        <div class="story-profile">
+                            <div class="story-avatar adobe-avatar">PS</div>
+                            <div class="story-details">
+                                <h4 class="story-name">Priya Singh</h4>
+                                <span class="story-role"><i class="fa-solid fa-cube"></i> Data Scientist @ Adobe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3: Rohan Kapoor -->
+                    <div class="story-card" data-reveal>
+                        <div class="story-quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                        <div class="story-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="story-quote">
+                            "Building my profile on XShare allowed me to connect with seniors who shared their transition stories. The community support is unparalleled. It took the anxiety out of product management case interviews."
+                        </p>
+                        <div class="story-profile">
+                            <div class="story-avatar zomato-avatar">RK</div>
+                            <div class="story-details">
+                                <h4 class="story-name">Rohan Kapoor</h4>
+                                <span class="story-role"><i class="fa-solid fa-burger"></i> Product Manager @ Zomato</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GET THE APP SHOWCASE SECTION -->
+        <section class="app-download-section" id="download-app">
+            <div class="container">
+                <div class="app-showcase-box" data-reveal>
+                    <div class="app-content-col">
+                        <span class="section-tag-light"><i class="fa-solid fa-mobile-screen"></i> MOBILE APP</span>
+                        <h2 class="app-title">Career Prep in Your Pocket.<br>Get the XShare App.</h2>
+                        <p class="app-subtitle">
+                            Get instant interview push notifications, read experiences offline during your commute, practice daily micro-quizzes, and never miss off-campus referral openings.
+                        </p>
+                        
+                        <div class="app-features-list">
+                            <div class="app-feat-item">
+                                <i class="fa-solid fa-bell-concierge"></i>
+                                <span>Real-time instant job & fest alerts</span>
+                            </div>
+                            <div class="app-feat-item">
+                                <i class="fa-solid fa-cloud-arrow-down"></i>
+                                <span>Save & read experiences offline</span>
+                            </div>
+                            <div class="app-feat-item">
+                                <i class="fa-solid fa-comments"></i>
+                                <span>Direct 1-on-1 alumni chat & AMA</span>
+                            </div>
+                        </div>
+
+                        <div class="app-cta-row">
+                            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-app-store btn-primary btn-large" id="btn-download-play">
+                                <i class="fa-brands fa-google-play"></i>
+                                <div class="btn-text-wrap">
+                                    <span class="btn-tiny">GET IT ON</span>
+                                    <span class="btn-strong">Google Play</span>
+                                </div>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-app-store btn-secondary btn-large" id="btn-download-apple">
+                                <i class="fa-brands fa-apple"></i>
+                                <div class="btn-text-wrap">
+                                    <span class="btn-tiny">DOWNLOAD ON</span>
+                                    <span class="btn-strong">App Store</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="app-mockup-col">
+                        <div class="phone-mockup">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen splash-screen">
+                                <div class="splash-center-content">
+                                    <div class="splash-icon-wrapper">
+                                        <div class="splash-icon-box">
+                                            <svg class="splash-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <!-- White X Letter -->
+                                                <path d="M26 28L46 54L27 76H38L52 59L66 76H77L58 54L76 28H65L52 47L38 28H26Z" fill="#FFFFFF"/>
+                                                <!-- Top Right Sky Blue Arrow -->
+                                                <path d="M64 16H84V36H78V26.24L58.12 46.12L53.88 41.88L73.76 22H64V16Z" fill="#38BDF8"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h3 class="splash-brand-title">XShare</h3>
+                                    <p class="splash-brand-tagline">Your career launchpad</p>
+                                </div>
+                                <div class="splash-bottom-indicators">
+                                    <span class="indicator-dot"></span>
+                                    <span class="indicator-pill active"></span>
+                                    <span class="indicator-dot"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION & SUPPORT SECTION -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header-center" data-reveal>
+                    <span class="section-tag"><i class="fa-solid fa-circle-question"></i> FREQUENTLY ASKED QUESTIONS</span>
+                    <h2 class="section-title">Everything You Need to Know</h2>
+                    <p class="section-desc">Got questions about how XShare works? We've got answers.</p>
+                </div>
+
+                <div class="faq-accordion-wrapper" data-reveal>
+                    <!-- FAQ 1 -->
+                    <div class="faq-item active">
+                        <button class="faq-question">
+                            <span>How are interview experiences on XShare verified?</span>
+                            <i class="fa-solid fa-chevron-down faq-toggle-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our moderation team validates offers and interview participation using work emails, official invitation screenshots, or LinkedIn verification badges. While contributors can post anonymously to the public, their submission is rigorously reviewed before being awarded the "Verified" badge.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is the ATS Resume Builder free to use?</span>
+                            <i class="fa-solid fa-chevron-down faq-toggle-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! You can choose from modern, recruiter-tested single-column templates, check your real-time score against job descriptions, and export clean PDF/LaTeX documents without any watermarks or hidden paywalls.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I share my interview story anonymously?</span>
+                            <i class="fa-solid fa-chevron-down faq-toggle-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. You can choose whether your name, university, or current employer is publicly visible. Protecting candidate privacy and encouraging transparent, raw interview feedback is our top priority.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do company referrals and job applications work on XShare?</span>
+                            <i class="fa-solid fa-chevron-down faq-toggle-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Verified employees at top tech firms host referral slots on XShare. When you apply with an ATS-optimized XShare profile and relevant project links, referrers can review your profile in one click and submit it directly to internal company portals.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How can colleges and fest organizers list their events?</span>
+                            <i class="fa-solid fa-chevron-down faq-toggle-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Student bodies and college committees can list their technical symposia, cultural fests, and hackathons by submitting an organizer request or contacting us directly at <a href="mailto:connect@xshare.in">connect@xshare.in</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Support Banner -->
+                <div class="support-banner" data-reveal>
+                    <div class="support-content">
+                        <div class="support-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div>
+                            <h4>Still have questions or partnership inquiries?</h4>
+                            <p>Reach out directly to our team. We respond within 24 hours.</p>
+                        </div>
+                    </div>
+                    <a href="mailto:connect@xshare.in" class="btn btn-secondary">
+                        <i class="fa-solid fa-envelope"></i> connect@xshare.in
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="#" class="brand-logo footer-logo">
+                        <img src="logo.png" alt="XShare Logo" class="brand-logo-img">
+                        <span class="logo-name">Xshare</span>
+                    </a>
+                    <p class="footer-tagline">
+                        Where structured experiences power real opportunities. Learn faster, apply smarter, and build the career you deserve.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:connect@xshare.in" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-col-title">Platform</h5>
+                    <ul class="footer-links">
+                        <li><a href="#experiences">Interview Experiences</a></li>
+                        <li><a href="#jobs">Job Openings</a></li>
+                        <li><a href="#tools">Resume Builder</a></li>
+                        <li><a href="#mock-prep">Mock Tests</a></li>
+                        <li><a href="https://xshare.in/shorts.html" target="_blank">Shorts</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-col-title">Community</h5>
+                    <ul class="footer-links">
+                        <li><a href="#features">College Fests</a></li>
+                        <li><a href="#features">Hackathons</a></li>
+                        <li><a href="#stories">Success Stories</a></li>
+                        <li><a href="#features">Leaderboard</a></li>
+                        <li><a href="mailto:connect@xshare.in">Mentorship</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-col-title">Company & Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://xshare.in/about-us.html" target="_blank">About Us</a></li>
+                        <li><a href="https://xshare.in/contact.html" target="_blank">Contact</a></li>
+                        <li><a href="https://xshare.in/privacy-policy.html" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://xshare.in/terms.html" target="_blank">Terms of Service</a></li>
+                        <li><a href="mailto:connect@xshare.in">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright-text">© 2026 XShare App. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="https://xshare.in/privacy-policy.html" target="_blank">Privacy</a>
+                    <span>•</span>
+                    <a href="https://xshare.in/terms.html" target="_blank">Terms</a>
+                    <span>•</span>
+                    <a href="mailto:connect@xshare.in">connect@xshare.in</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL: GET THE APP / QR CODE DOWNLOAD -->
+    <div class="modal-overlay" id="app-modal">
+        <div class="modal-box">
+            <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+            <div class="modal-header">
+                <img src="logo.png" alt="XShare Logo" class="modal-logo-img">
+                <h3>Get the XShare App</h3>
+                <p>Scan the QR code or click direct download links below</p>
+            </div>
+            <div class="modal-qr-section">
+                <div class="qr-box">
+                    <div class="mock-qr-code">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <span class="qr-hint">Scan with phone camera</span>
+                </div>
+            </div>
+            <div class="modal-download-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block"><i class="fa-brands fa-google-play"></i> Download for Android</a>
+                <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block"><i class="fa-brands fa-apple"></i> Download for iOS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: EXPERIENCE READER FULL PREVIEW -->
+    <div class="modal-overlay" id="reader-modal">
+        <div class="modal-box modal-large">
+            <button class="modal-close-btn" id="reader-close-btn">&times;</button>
+            <div id="reader-content-body">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING SCROLL TO TOP BUTTON -->
+    <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-notification" id="toast-msg"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
