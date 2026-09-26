@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 10b. Gamified Education & Daily Quests Widget
     initGamifiedEducation();
 
+    // 10c. 3D Gamified Arcade Wheel Arena
+    initArcadeWheel();
+
     // 11. Full Experience Reader Modal
     initExperienceReaderModal();
 
@@ -627,6 +630,262 @@ function initGamifiedEducation() {
     }
 
     attachClaimHandler();
+}
+
+/* ==========================================================================
+   10c. 3D Gamified Arcade Wheel Arena
+   ========================================================================== */
+const ARCADE_GAMES = [
+    {
+        title: "Flappy Bug",
+        tag: "ONE-TAP",
+        reward: "+150 XP",
+        desc: "You're the bug. Slip past QA, CI and lint — and pick the right gap.",
+        image: "assets/games/flappy-bug.png"
+    },
+    {
+        title: "Brain Blitz",
+        tag: "QUIZ",
+        reward: "+200 XP",
+        desc: "Rapid-fire questions with an explanation after every answer.",
+        image: "assets/games/brain-blitz.png"
+    },
+    {
+        title: "Deploy Dash",
+        tag: "RUNNER",
+        reward: "+250 XP",
+        desc: "Sprint down the deploy pipeline and ship to production before Friday 5pm.",
+        image: "assets/games/deploy-dash.png"
+    },
+    {
+        title: "Code Racer",
+        tag: "RACING",
+        reward: "+220 XP",
+        desc: "Race down the data highway. Dodge bugs and drive through the right answers.",
+        image: "assets/games/code-racer.png"
+    }
+];
+
+function initArcadeWheel() {
+    const stageEl = document.getElementById('arcade-stage');
+    const wheelDrum = document.getElementById('arcade-wheel-drum');
+    const sideIndex = document.getElementById('arcade-side-index');
+    const ringLabel = document.getElementById('arcade-ring-label');
+    const activeTitle = document.getElementById('arcade-active-title');
+    const prevBtn = document.getElementById('arcade-prev-btn');
+    const nextBtn = document.getElementById('arcade-next-btn');
+    const btnLaunchArcade = document.getElementById('btn-launch-arcade');
+
+    const metaTag = document.getElementById('arcade-tag');
+    const metaReward = document.getElementById('arcade-reward');
+    const metaHeading = document.getElementById('arcade-game-heading');
+    const metaDesc = document.getElementById('arcade-game-desc');
+
+    if (!stageEl || !wheelDrum) return;
+
+    const count = ARCADE_GAMES.length;
+    const last = Math.max(count - 1, 0);
+
+    // Build Cards and Index
+    wheelDrum.innerHTML = '';
+    if (sideIndex) sideIndex.innerHTML = '';
+
+    const cardElements = [];
+    const indexButtons = [];
+
+    ARCADE_GAMES.forEach((game, i) => {
+        // Create 3D Card
+        const card = document.createElement('a');
+        card.className = 'arcade-card-item';
+        card.href = 'https://play.google.com/store/apps/details?id=com.xshare.learnshare';
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer';
+        card.id = `arcade-card-${i}`;
+
+        card.innerHTML = `
+            <span class="arcade-card-face">
+                <img src="${game.image}" alt="${game.title}" class="arcade-card-img" draggable="false" loading="lazy" />
+                <span class="arcade-card-action">
+                    <i class="fa-solid fa-play"></i> Play Quest
+                </span>
+            </span>
+        `;
+        wheelDrum.appendChild(card);
+        cardElements.push(card);
+
+        // Create Side Index Item if container exists
+        if (sideIndex) {
+            const li = document.createElement('li');
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = `arcade-index-btn ${i === 0 ? 'active' : ''}`;
+            btn.textContent = `${i + 1}. ${game.title}`;
+            btn.addEventListener('click', () => {
+                targetPos = i + 1;
+            });
+            li.appendChild(btn);
+            sideIndex.appendChild(li);
+            indexButtons.push(btn);
+        }
+    });
+
+    const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+
+    let stageW = stageEl.clientWidth || 600;
+    let stageH = stageEl.clientHeight || 320;
+
+    function getMetrics() {
+        const cardW = Math.min(stageW * 0.68, 380);
+        const cardH = cardW / 1.78;
+        return { cardW, cardH };
+    }
+
+    let metrics = getMetrics();
+
+    window.addEventListener('resize', () => {
+        stageW = stageEl.clientWidth || 600;
+        stageH = stageEl.clientHeight || 320;
+        metrics = getMetrics();
+    });
+
+    let currentTurn = 0;
+    let targetPos = 0;
+    let activeIndex = 0;
+
+    function updateActiveGame(idx) {
+        if (idx === activeIndex) return;
+        activeIndex = idx;
+        const game = ARCADE_GAMES[idx];
+        if (!game) return;
+
+        if (activeTitle) activeTitle.textContent = game.title;
+        if (metaTag) metaTag.textContent = game.tag;
+        if (metaReward) metaReward.textContent = `${game.reward} Reward`;
+        if (metaHeading) metaHeading.textContent = game.title;
+        if (metaDesc) metaDesc.textContent = game.desc;
+
+        indexButtons.forEach((btn, i) => {
+            btn.classList.toggle('active', i === idx);
+        });
+    }
+
+    // Animation Loop
+    const EASE = 0.14;
+    let animFrame = null;
+    function renderLoop() {
+        const gap = targetPos - currentTurn;
+        if (Math.abs(gap) < 0.0005) {
+            currentTurn = targetPos;
+        } else {
+            currentTurn += gap * EASE;
+        }
+
+        const pos = currentTurn;
+        const { cardW, cardH } = metrics;
+
+        for (let i = 0; i < count; i++) {
+            const d = i - pos;
+            const absD = Math.abs(d);
+            const card = cardElements[i];
+            if (card) {
+                card.style.width = `${cardW}px`;
+                card.style.height = `${cardH}px`;
+                card.style.marginLeft = `${-cardW / 2}px`;
+                card.style.marginTop = `${-cardH / 2}px`;
+
+                if (absD > 1.8) {
+                    card.style.opacity = '0';
+                    card.style.pointerEvents = 'none';
+                    card.style.visibility = 'hidden';
+                } else {
+                    card.style.visibility = 'visible';
+                    const rotX = -d * 24;
+                    const transY = d * (cardH * 0.62);
+                    const transZ = -absD * 70;
+                    const scale = Math.max(0.68, 1 - absD * 0.12);
+                    const opacity = Math.max(0, 1 - absD * 0.45);
+
+                    card.style.transform = `translateY(${transY}px) translateZ(${transZ}px) rotateX(${rotX}deg) scale(${scale})`;
+                    card.style.opacity = String(opacity);
+                    card.style.filter = `brightness(${Math.max(0.75, 1 - absD * 0.22)})`;
+                    card.style.zIndex = String(Math.round(100 - absD * 10));
+                    card.style.pointerEvents = absD < 0.4 ? 'auto' : 'none';
+                }
+            }
+        }
+
+        const near = clamp(Math.round(pos), 0, last);
+        updateActiveGame(near);
+
+        animFrame = requestAnimationFrame(renderLoop);
+    }
+    animFrame = requestAnimationFrame(renderLoop);
+
+    // Controls: Wheel scrolling
+    let settleTimer = 0;
+    stageEl.addEventListener('wheel', (e) => {
+        const next = targetPos + e.deltaY / 400;
+        if (next >= 0 && next <= last) e.preventDefault();
+        targetPos = clamp(next, 0, last);
+
+        clearTimeout(settleTimer);
+        settleTimer = setTimeout(() => {
+            targetPos = Math.round(targetPos);
+        }, 120);
+    }, { passive: false });
+
+    // Pointer Drag / Swipe
+    let dragStart = null;
+    stageEl.addEventListener('pointerdown', (e) => {
+        dragStart = e.clientY;
+        stageEl.setPointerCapture(e.pointerId);
+    });
+
+    stageEl.addEventListener('pointermove', (e) => {
+        if (dragStart === null) return;
+        const delta = (dragStart - e.clientY) / 180;
+        targetPos = clamp(targetPos + delta, 0, last);
+        dragStart = e.clientY;
+    });
+
+    const endPointer = () => {
+        dragStart = null;
+        targetPos = clamp(Math.round(targetPos), 0, last);
+    };
+
+    stageEl.addEventListener('pointerup', endPointer);
+    stageEl.addEventListener('pointercancel', endPointer);
+
+    // Arrow keys
+    stageEl.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') {
+            targetPos = clamp(Math.round(targetPos) + 1, 0, last);
+            e.preventDefault();
+        } else if (e.key === 'ArrowUp') {
+            targetPos = clamp(Math.round(targetPos) - 1, 0, last);
+            e.preventDefault();
+        }
+    });
+
+    // Prev / Next HUD Buttons
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            targetPos = clamp(Math.round(targetPos) - 1, 0, last);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            targetPos = clamp(Math.round(targetPos) + 1, 0, last);
+        });
+    }
+
+    if (btnLaunchArcade) {
+        btnLaunchArcade.addEventListener('click', () => {
+            const game = ARCADE_GAMES[activeIndex];
+            showToast(`🚀 Launching ${game ? game.title : 'Arcade Quest'} on XShare App!`);
+        });
+    }
 }
 
 /* ==========================================================================

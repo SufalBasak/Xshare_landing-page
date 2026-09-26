@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Styles with cache-buster -->
-    <link rel="stylesheet" href="styles.css?v=2.5">
+    <link rel="stylesheet" href="styles.css?v=3.0">
 </head>
 <body>
     <!-- Background Dynamic Glow & Canvas -->
@@ -902,6 +902,61 @@
                                     <i class="fa-solid fa-trophy"></i> Play & Earn On XShare App
                                 </a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GAMIFIED ARCADE LEARNING ARENA (3D WORKS WHEEL INTERACTIVE) -->
+        <section class="arcade-section" id="arcade-arena">
+            <div class="container">
+                <div class="section-header-center" data-reveal>
+                    <span class="section-tag"><i class="fa-solid fa-gamepad"></i> GAMIFIED ARCADE ARENA</span>
+                    <h2 class="section-title">Play, Compete & Learn with Gamified Quests</h2>
+                    <p class="section-desc">Turn complex algorithms, debugging, and system design into interactive 3D game battles. Earn XP, collect badges, and climb the leaderboard.</p>
+                </div>
+
+                <div class="arcade-wheel-wrapper" data-reveal>
+                    <div class="arcade-hud-bar">
+                        <div class="hud-left">
+                            <span class="hud-pill"><i class="fa-solid fa-bolt text-amber"></i> Live Battles Online</span>
+                            <span class="hud-pill hud-streak"><i class="fa-solid fa-fire text-orange"></i> 2.5x XP Boost Active</span>
+                        </div>
+                        <div class="hud-controls">
+                            <button class="arcade-nav-btn" id="arcade-prev-btn" aria-label="Previous Game">
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </button>
+                            <button class="arcade-nav-btn" id="arcade-next-btn" aria-label="Next Game">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3D Perspective Stage Area -->
+                    <div class="arcade-stage-container" id="arcade-stage" tabindex="0" role="listbox" aria-label="XShare Arcade Wheel">
+                        <div class="arcade-wheel-ring-label" id="arcade-ring-label">XShare Games</div>
+                        <div class="arcade-wheel-active-title" id="arcade-active-title">Flappy Bug</div>
+
+                        <div class="arcade-wheel-3d" id="arcade-wheel-drum">
+                            <!-- Rendered dynamically by script.js -->
+                        </div>
+                    </div>
+
+                    <!-- Interactive Game Meta & Launch CTA -->
+                    <div class="arcade-footer-cta">
+                        <div class="arcade-game-meta">
+                            <div class="meta-tag-row">
+                                <span class="badge-tag" id="arcade-tag">ONE-TAP</span>
+                                <span class="badge-reward" id="arcade-reward">+150 XP Reward</span>
+                            </div>
+                            <h4 id="arcade-game-heading">Flappy Bug</h4>
+                            <p id="arcade-game-desc">You're the bug. Slip past QA, CI and lint — and pick the right gap.</p>
+                        </div>
+                        <div class="arcade-cta-actions">
+                            <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-brand-primary" id="btn-launch-arcade">
+                                <i class="fa-solid fa-play"></i> Play Quest on XShare App
+                            </a>
                         </div>
                     </div>
                 </div>

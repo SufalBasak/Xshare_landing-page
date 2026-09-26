@@ -1,72 +1,35 @@
-// components/ui/demo.tsx
+"use client";
 
-import React from "react";
-import { GradientCard } from "@/components/ui/gradient-card";
+import { WorksWheel, type WorksWheelItem } from "./works-wheel";
 
-// Data for the cards to demonstrate reusability
-const cardData = [
+// Learning & Arcade Game Items tailored for XShare Platform
+const WORKS: WorksWheelItem[] = [
   {
-    badgeText: "Open / Invite-priority",
-    badgeColor: "#F59E0B", // Amber
-    title: "Companies",
-    description: "Build teams of highly motivated tech-professionals across the globe, with projects across all industries.",
-    ctaText: "Start hiring",
-    ctaHref: "#",
-    imageUrl: "https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-CVv0qK2DYZbOAQP2LboVFgQGt0UMfB.png&w=320&q=75",
-    gradient: "orange" as const,
+    title: "Flappy Bug",
+    image: "/assets/games/flappy-bug.png",
+    href: "https://play.google.com/store/apps/details?id=com.xshare.learnshare",
   },
   {
-    badgeText: "Open for applications",
-    badgeColor: "#4B5563", // Gray
-    title: "Builders",
-    description: "Work on your own terms in a motivating and healthy environment. You will earn TMW-tokens too!",
-    ctaText: "Apply now",
-    ctaHref: "#",
-    imageUrl: "https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-5i9EDsbgEZk9k7NBeKt3ImNXkx0F66.png&w=320&q=75",
-    gradient: "gray" as const,
+    title: "Brain Blitz",
+    image: "/assets/games/brain-blitz.png",
+    href: "https://play.google.com/store/apps/details?id=com.xshare.learnshare",
   },
   {
-    badgeText: "Invite only",
-    badgeColor: "#8B5CF6", // Purple
-    title: "Scouts",
-    description: "As a scout you will utilize your network to refer new members and companies to earn ownership in form of TMW-tokens.",
-    ctaText: "Request invite",
-    ctaHref: "#",
-    imageUrl: "https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-5WJZLkaCfLUnCYpgNz89tPx5C4KYgJ.png&w=320&q=75",
-    gradient: "purple" as const,
+    title: "Deploy Dash",
+    image: "/assets/games/deploy-dash.png",
+    href: "https://play.google.com/store/apps/details?id=com.xshare.learnshare",
   },
   {
-    badgeText: "Invite only",
-    badgeColor: "#10B981", // Green
-    title: "Partners",
-    description: "As a partner you can offer direct access to the Teamway society to your portfolio companies, community or customers.",
-    ctaText: "Get in touch",
-    ctaHref: "#",
-    imageUrl: "https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-Q24CTBwBqnBrGujxuykBW9GfOYTdeE.png&w=320&q=75",
-    gradient: "green" as const,
+    title: "Code Racer",
+    image: "/assets/games/code-racer.png",
+    href: "https://play.google.com/store/apps/details?id=com.xshare.learnshare",
   },
 ];
 
-const GradientCardDemo = () => {
+export default function WorksWheelDemo() {
   return (
-    <div className="p-4 sm:p-8">
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10">
-        {cardData.map((card, index) => (
-          <GradientCard
-            key={index}
-            badgeText={card.badgeText}
-            badgeColor={card.badgeColor}
-            title={card.title}
-            description={card.description}
-            ctaText={card.ctaText}
-            ctaHref={card.ctaHref}
-            imageUrl={card.imageUrl}
-            gradient={card.gradient}
-          />
-        ))}
-      </div>
+    <div className="bg-background text-foreground w-full h-screen">
+      <WorksWheel items={WORKS} label="Arcade Arena '26" action="Play Quest" />
     </div>
   );
-};
-
-export default GradientCardDemo;
+}

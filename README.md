@@ -57,11 +57,16 @@ This repository contains the production landing page featuring rich animations, 
    - **Gamified Education Arena**: Daily streaks, XP multiplier quests, and leaderboard trophies.
    - **Verified Peer Community**: 1-on-1 mentorship connections and discussion boards.
 
-6. **Interactive Experience Archive & Filter Hub**:
+6. **3D Gamified Arcade Arena (Works Wheel)**:
+   - 3D perspective drum and ring interactive physics with single rAF rendering.
+   - 4 authentic curated XShare learning games: *Flappy Bug (One-Tap)*, *Brain Blitz (Quiz)*, *Deploy Dash (Runner)*, and *Code Racer (Racing)*.
+   - Drag, swipe, mouse wheel, keyboard, and prev/next HUD navigation with instant XP rewards.
+
+7. **Interactive Experience Archive & Filter Hub**:
    - Live filtering by company (Google, Microsoft, Amazon, Adobe, Zomato, Flipkart) and category.
    - Modal reading overlay for deep dive into interview questions, coding rounds, and interview tips.
 
-7. **Official Google Play Store Showcase**:
+8. **Official Google Play Store Showcase**:
    - Warm cream theme (`.btn-cream`) download button with authentic 4-color Google Play vector badge.
    - Single-click deep linking to the Google Play Store Android app.
 
