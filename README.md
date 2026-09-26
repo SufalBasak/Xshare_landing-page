@@ -42,12 +42,13 @@ This repository contains the production landing page featuring rich animations, 
    - Browser chrome frame mockup with traffic light dots and simulated secure URL bar.
    - Embedded showcase video with interactive audio unmute overlays, floating play badges, and autoplay gesture listeners.
 
-4. **Live Key Performance Indicators (5 Metric Cards)**:
-   - **50,000+** Active Students & Job Seekers.
-   - **1,200+** Verified Company Interview Experiences.
-   - **94%** Interview Placement Success Rate.
-   - **₹48 LPA** Highest Candidate Package Offered.
-   - **3,000+** Curated Project & Problem Ideas.
+4. **Live Key Performance Indicators (6 Metric Cards)**:
+   - **10,000+** Verified Experiences.
+   - **550+** Active Users.
+   - **1,000+** Companies Covered.
+   - **1,000+** Learning & Mock Tests.
+   - **3,000+** Project Ideas.
+   - **1,000+** Live Events.
 
 5. **Modern Gradient Card Feature Pillars**:
    - **Verified Interview Experiences**: In-depth round-by-round breakdown (OA, Technical DSA, System Design, HR).

@@ -871,7 +871,7 @@ button {
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 16px;
     margin-bottom: 48px;
 }
@@ -912,6 +912,7 @@ button {
 .icon-companies { background: #fffbeb; color: #d97706; }
 .icon-learning { background: #fdf2f8; color: #db2777; }
 .icon-ideas { background: #f5f3ff; color: #7c3aed; }
+.icon-events { background: #f0fdfa; color: #0d9488; }
 
 .stat-number-wrap {
     font-family: var(--font-heading);
