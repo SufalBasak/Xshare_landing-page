@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Styles with cache-buster -->
-    <link rel="stylesheet" href="styles.css?v=2.4">
+    <link rel="stylesheet" href="styles.css?v=2.5">
 </head>
 <body>
     <!-- Background Dynamic Glow & Canvas -->
@@ -758,7 +758,7 @@
                 <div class="section-header-center" data-reveal>
                     <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> POWERFUL PREP SUITE</span>
                     <h2 class="section-title">Experience XShare Tools In Action</h2>
-                    <p class="section-desc">Test our real-time ATS scoring engine and take a 30-second live mock challenge right now.</p>
+                    <p class="section-desc">Test our real-time ATS scoring engine, take a 30-second live mock challenge, and level up with gamified learning quests.</p>
                 </div>
 
                 <div class="interactive-dual-grid">
@@ -842,6 +842,64 @@
                             <div class="tool-actions-row">
                                 <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-block" id="btn-more-mocks">
                                     <i class="fa-solid fa-list-check"></i> Unlock 5,000+ Full Mock Series
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tool 3: Gamified Education & Daily Quests -->
+                    <div class="tool-demo-box" data-reveal>
+                        <div class="tool-header">
+                            <div class="tool-title-wrap">
+                                <i class="fa-solid fa-gamepad tool-icon icon-game"></i>
+                                <div>
+                                    <h3>Gamified Education</h3>
+                                    <span class="tool-sub">Daily streaks, XP quests & badges</span>
+                                </div>
+                            </div>
+                            <div class="ats-score-gauge streak-gauge" id="streak-gauge">
+                                <span class="gauge-value" id="streak-val">🔥 7d</span>
+                                <span class="gauge-label">Active Streak</span>
+                            </div>
+                        </div>
+
+                        <div class="tool-body gamified-card-body">
+                            <div class="role-selector-pill-group" id="gamified-tabs">
+                                <button class="role-pill active" data-game-tab="quests">Daily Quests</button>
+                                <button class="role-pill" data-game-tab="badges">Skill Badges</button>
+                                <button class="role-pill" data-game-tab="leaderboard">Leaderboard</button>
+                            </div>
+
+                            <div class="sample-resume-preview gamified-preview-box" id="gamified-content">
+                                <div class="quest-item">
+                                    <div class="quest-info">
+                                        <span class="quest-title"><i class="fa-solid fa-bolt text-amber"></i> Complete 3 Mock MCQs</span>
+                                        <span class="quest-xp">+60 XP</span>
+                                    </div>
+                                    <div class="quest-progress-bar">
+                                        <div class="quest-progress-fill" style="width: 66%;"></div>
+                                    </div>
+                                    <span class="quest-status">2/3 Completed</span>
+                                </div>
+
+                                <div class="quest-item done">
+                                    <div class="quest-info">
+                                        <span class="quest-title"><i class="fa-solid fa-circle-check text-emerald"></i> Review 1 SDE Interview Exp</span>
+                                        <span class="quest-xp claimed">✓ +50 XP</span>
+                                    </div>
+                                </div>
+
+                                <div class="quest-item bonus" id="daily-bonus-quest">
+                                    <div class="quest-info">
+                                        <span class="quest-title"><i class="fa-solid fa-gift text-purple"></i> Daily Check-in Bonus</span>
+                                        <button class="btn-claim-xp" id="btn-claim-bonus">Claim +25 XP</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tool-actions-row">
+                                <a href="https://play.google.com/store/apps/details?id=com.xshare.learnshare" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-block btn-purple-gradient" id="btn-play-game">
+                                    <i class="fa-solid fa-trophy"></i> Play & Earn On XShare App
                                 </a>
                             </div>
                         </div>

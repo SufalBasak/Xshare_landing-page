@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 10. Live Mock Test Quiz Widget
     initMockQuiz();
 
+    // 10b. Gamified Education & Daily Quests Widget
+    initGamifiedEducation();
+
     // 11. Full Experience Reader Modal
     initExperienceReaderModal();
 
@@ -515,6 +518,115 @@ function initMockQuiz() {
             if (mockSection) mockSection.scrollIntoView({ behavior: 'smooth' });
         });
     }
+}
+
+/* ==========================================================================
+   10b. Gamified Education & Daily Quests Widget
+   ========================================================================== */
+function initGamifiedEducation() {
+    const gameTabs = document.querySelectorAll('#gamified-tabs .role-pill');
+    const contentBox = document.getElementById('gamified-content');
+    const streakVal = document.getElementById('streak-val');
+    const btnPlayGame = document.getElementById('btn-play-game');
+
+    const views = {
+        quests: `
+            <div class="quest-item">
+                <div class="quest-info">
+                    <span class="quest-title"><i class="fa-solid fa-bolt text-amber"></i> Complete 3 Mock MCQs</span>
+                    <span class="quest-xp">+60 XP</span>
+                </div>
+                <div class="quest-progress-bar">
+                    <div class="quest-progress-fill" style="width: 66%;"></div>
+                </div>
+                <span class="quest-status">2/3 Completed</span>
+            </div>
+            <div class="quest-item done">
+                <div class="quest-info">
+                    <span class="quest-title"><i class="fa-solid fa-circle-check text-emerald"></i> Review 1 SDE Interview Exp</span>
+                    <span class="quest-xp claimed">✓ +50 XP</span>
+                </div>
+            </div>
+            <div class="quest-item bonus" id="daily-bonus-quest">
+                <div class="quest-info">
+                    <span class="quest-title"><i class="fa-solid fa-gift text-purple"></i> Daily Check-in Bonus</span>
+                    <button class="btn-claim-xp" id="btn-claim-bonus">Claim +25 XP</button>
+                </div>
+            </div>
+        `,
+        badges: `
+            <div class="badge-showcase-grid">
+                <div class="badge-item-mini">
+                    <i class="fa-solid fa-medal text-amber"></i>
+                    <span class="badge-name">Algo Ace</span>
+                    <span class="badge-sub">Level 3</span>
+                </div>
+                <div class="badge-item-mini">
+                    <i class="fa-solid fa-shield-halved text-purple"></i>
+                    <span class="badge-name">System Pro</span>
+                    <span class="badge-sub">Level 2</span>
+                </div>
+                <div class="badge-item-mini">
+                    <i class="fa-solid fa-fire text-emerald"></i>
+                    <span class="badge-name">7d Streaker</span>
+                    <span class="badge-sub">Unlocked</span>
+                </div>
+            </div>
+            <div class="quest-status" style="text-align:center; margin-top: 6px; font-size: 0.7rem; color: #7c3aed;">
+                🎯 12 more badges unlockable on the app!
+            </div>
+        `,
+        leaderboard: `
+            <div class="leaderboard-list-mini">
+                <div class="leaderboard-row-mini">
+                    <span class="rank-name">🥇 Sneha D. (Google)</span>
+                    <span class="rank-xp">4,820 XP</span>
+                </div>
+                <div class="leaderboard-row-mini">
+                    <span class="rank-name">🥈 Rohit M. (Amazon)</span>
+                    <span class="rank-xp">4,310 XP</span>
+                </div>
+                <div class="leaderboard-row-mini user-row">
+                    <span class="rank-name">⭐ You (Tier-1 Tech)</span>
+                    <span class="rank-xp">2,450 XP</span>
+                </div>
+            </div>
+        `
+    };
+
+    function attachClaimHandler() {
+        const claimBtn = document.getElementById('btn-claim-bonus');
+        if (claimBtn) {
+            claimBtn.addEventListener('click', () => {
+                claimBtn.classList.add('claimed');
+                claimBtn.textContent = '✓ Claimed';
+                if (streakVal) streakVal.innerHTML = '🔥 8d';
+                showToast('🎉 +25 XP Claimed! Your daily streak is now 8 days 🔥');
+            });
+        }
+    }
+
+    gameTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            gameTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const tabKey = tab.getAttribute('data-game-tab');
+            if (contentBox && views[tabKey]) {
+                contentBox.innerHTML = views[tabKey];
+                if (tabKey === 'quests') attachClaimHandler();
+            }
+        });
+    });
+
+    if (btnPlayGame) {
+        btnPlayGame.addEventListener('click', (e) => {
+            showToast('Opening Gamified Battles & Leaderboard on XShare App...');
+            window.open(PLAY_STORE_URL, '_blank');
+        });
+    }
+
+    attachClaimHandler();
 }
 
 /* ==========================================================================
