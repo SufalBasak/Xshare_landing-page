@@ -977,86 +977,167 @@ button {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 28px;
 }
 
 .feature-card {
-    background: #ffffff;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    padding: 30px 24px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-base);
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+    z-index: 1;
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--brand-blue-border);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12), 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
-.feature-icon-box {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    display: flex;
+/* Gradient Variants Matching Theme */
+.card-gradient-purple {
+    background: linear-gradient(145deg, #faf5ff 0%, #f3e8ff 50%, #ede9fe 100%);
+    border-color: rgba(192, 132, 252, 0.35);
+}
+.card-gradient-purple:hover {
+    border-color: rgba(168, 85, 247, 0.6);
+}
+
+.card-gradient-cyan {
+    background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+    border-color: rgba(56, 189, 248, 0.35);
+}
+.card-gradient-cyan:hover {
+    border-color: rgba(2, 132, 199, 0.6);
+}
+
+.card-gradient-green {
+    background: linear-gradient(145deg, #f0fdf4 0%, #dcfce7 50%, #ccfbf1 100%);
+    border-color: rgba(74, 222, 128, 0.35);
+}
+.card-gradient-green:hover {
+    border-color: rgba(16, 185, 129, 0.6);
+}
+
+.card-gradient-orange {
+    background: linear-gradient(145deg, #fff7ed 0%, #ffedd5 50%, #fef3c7 100%);
+    border-color: rgba(251, 146, 60, 0.35);
+}
+.card-gradient-orange:hover {
+    border-color: rgba(249, 115, 22, 0.6);
+}
+
+.card-gradient-pink {
+    background: linear-gradient(145deg, #fdf2f8 0%, #fce7f3 50%, #fae8ff 100%);
+    border-color: rgba(244, 114, 182, 0.35);
+}
+.card-gradient-pink:hover {
+    border-color: rgba(236, 72, 153, 0.6);
+}
+
+.card-gradient-blue {
+    background: linear-gradient(145deg, #eff6ff 0%, #dbeafe 50%, #e0e7ff 100%);
+    border-color: rgba(96, 165, 250, 0.35);
+}
+.card-gradient-blue:hover {
+    border-color: rgba(37, 99, 235, 0.6);
+}
+
+.card-gradient-teal {
+    background: linear-gradient(145deg, #f0fdfa 0%, #ccfbf1 50%, #e0f2fe 100%);
+    border-color: rgba(45, 212, 191, 0.35);
+}
+.card-gradient-teal:hover {
+    border-color: rgba(13, 148, 136, 0.6);
+}
+
+.card-gradient-amber {
+    background: linear-gradient(145deg, #fffbeb 0%, #fef3c7 50%, #fed7aa 100%);
+    border-color: rgba(251, 191, 36, 0.35);
+}
+.card-gradient-amber:hover {
+    border-color: rgba(234, 88, 12, 0.6);
+}
+
+.card-gradient-gold {
+    background: linear-gradient(145deg, #fefce8 0%, #fef08a 50%, #fde68a 100%);
+    border-color: rgba(250, 204, 21, 0.4);
+}
+.card-gradient-gold:hover {
+    border-color: rgba(202, 138, 4, 0.6);
+}
+
+/* Card Top Badge with Dot */
+.card-badge-pill {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    margin-bottom: 18px;
+    gap: 8px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 5px 13px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+    width: fit-content;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+    z-index: 2;
 }
 
-.icon-purple { background: #f3e8ff; color: #7c3aed; }
-.icon-cyan { background: var(--brand-blue-light); color: var(--brand-blue); }
-.icon-green { background: #ecfdf5; color: #059669; }
-.icon-amber { background: #fffbeb; color: #d97706; }
-.icon-pink { background: #fdf2f8; color: #db2777; }
-.icon-blue { background: var(--brand-blue-light); color: var(--brand-blue); }
-.icon-teal { background: #f0fdfa; color: #0d9488; }
-.icon-orange { background: #fff7ed; color: #ea580c; }
-.icon-gold { background: #fefce8; color: #ca8a04; }
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
 
-.feature-badge {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    font-size: 0.6875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 4px;
-    background: #f1f5f9;
-    color: var(--text-secondary);
+.card-content-wrap {
+    z-index: 2;
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .feature-title {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: var(--brand-dark);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--brand-heading);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
 }
 
 .feature-text {
     font-size: 0.9375rem;
-    color: var(--text-secondary);
+    color: #475569;
     line-height: 1.6;
     margin-bottom: 18px;
 }
 
 .feature-checklist {
     list-style: none;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 9px;
     flex-grow: 1;
 }
 
 .feature-checklist li {
     font-size: 0.8125rem;
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: #334155;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1064,34 +1145,85 @@ button {
 
 .feature-checklist li i {
     color: #059669;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
 }
 
 .feature-card-footer {
-    padding-top: 14px;
-    border-top: 1px solid var(--border-subtle);
+    padding-top: 16px;
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+    z-index: 2;
+    position: relative;
 }
 
-.feature-link {
+.gradient-card-cta {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    color: var(--brand-blue);
-    font-size: 0.875rem;
+    gap: 8px;
+    font-size: 0.9375rem;
     font-weight: 700;
+    color: var(--brand-heading);
+    text-decoration: none;
+    transition: all var(--transition-fast);
 }
 
-.feature-link:hover {
-    color: var(--brand-blue-hover);
+.gradient-card-cta .cta-arrow {
+    font-size: 0.85rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.feature-card:hover .gradient-card-cta {
+    color: var(--brand-blue);
+}
+
+.feature-card:hover .gradient-card-cta .cta-arrow {
+    transform: translateX(5px);
+}
+
+/* Decorative 3D Corner Graphic */
+.card-corner-graphic {
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.8rem;
+    pointer-events: none;
+    opacity: 0.18;
+    z-index: 1;
+    transform: scale(1) rotate(0deg);
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+
+.feature-card:hover .card-corner-graphic {
+    transform: scale(1.18) rotate(8deg);
+    opacity: 0.28;
+}
+
+.icon-purple-graphic { color: #8b5cf6; }
+.icon-cyan-graphic { color: #0284c7; }
+.icon-green-graphic { color: #10b981; }
+.icon-orange-graphic { color: #f59e0b; }
+.icon-pink-graphic { color: #ec4899; }
+.icon-blue-graphic { color: #2563eb; }
+.icon-teal-graphic { color: #0d9488; }
+.icon-amber-graphic { color: #ea580c; }
+.icon-gold-graphic { color: #ca8a04; }
 
 .btn-link-action {
-    color: var(--brand-blue);
-    font-size: 0.875rem;
+    color: var(--brand-heading);
+    font-size: 0.9375rem;
     font-weight: 700;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* ==========================================================================
